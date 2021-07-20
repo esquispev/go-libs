@@ -12,6 +12,12 @@ type User struct {
 	Address string				`json:"address"`
 }
 
+type ResponseUser struct {
+	Code int                    `json:"code"`
+	Error string			    `json:"error"`
+	Data User					`json:"data"`		
+}
+
 func InputTranscode(in, out interface{}) {
 	buf := new(bytes.Buffer)
 	json.NewEncoder(buf).Encode(in)
